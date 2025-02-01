@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySpace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        input[type="checkbox"] {
+            width: 13px;
+            height: 13px;
+        }
+
+        p, span {
+            font-size: 0.8rem;
+        }
+
+        /* Smooth transition for the div */
+        #conad {
+            position: absolute;
+            left: 30rem;
+            top: 7rem;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-vh-100 p-5">
+        <div id="conad"><h1>0x0000000000000</h1></div> 
+        <div class="d-flex justify-content-between">
+            <div>
+                <h6><strong>Mail Center<br>Friend Request Manager</strong></h6>
+            </div>
+            <div>
+                <img src="mysp-logo.png" style="width: 1.5rem;">
+                <span>Approve or Deny Your Friend Requests <span style="color: #3090df;"><strong>[help]</strong></span></span>
+            </div>
+        </div>
+        <div class="border mh-100 p-5" style="height: 30rem;">
+            <div class="border mt-4" style="height: 20rem;">
+                <p>Listing 1-2 of 2<span style="margin-left: 50rem;">1 of 1</span></p>
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr style="background-color: #77acd6" class="text-white">
+                            <td></td>
+                            <td class="" colspan="1">Date: </td>
+                            <td>From: </td>
+                            <td>Confirmation: </td>
+                        </tr>
+                        <tr style="background-color: #ecf4fb; height: 8rem;" class="text-black ">
+                            <td style="vertical-align: top;"><input type="checkbox"></td>
+                            <td class="" style="vertical-align: top; width: 10rem;">
+                                <p>May 14,<br> 2007<br> 3:50AM</p>
+                            </td>
+                            <td style="vertical-align: top; width: 13rem;">
+                                <img src="tomboy.png" alt="">
+                            </td>
+                            <td style="vertical-align: top;" class="pt-4">
+                                <p class="text-center mt-3">
+                                    <span style="color: #3090df;"><strong>Tom</strong></span> wants to be your friend
+                                </p>
+                                <div class="d-flex justify-content-center">
+                                    <button style="font-size: 0.8rem;" id="approve">Approve</button>
+                                    <button id="deny" style="font-size: 0.8rem; margin-left: 1rem; margin-right: 1rem;">Deny</button>
+                                    <button id="send" style="font-size: 0.8rem;">Send Message</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script type="module">
+        import confetti from "https://cdn.skypack.dev/canvas-confetti";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const approveButton = document.getElementById('approve');
+            const denyButton = document.getElementById('deny');
+            const sendButton = document.getElementById('send');
+            const conadDiv = document.getElementById('conad');
+
+            const showConad = () => {
+                conadDiv.style.visibility = 'visible';
+                conadDiv.style.opacity = '1';
+            };
+
+            approveButton.addEventListener('click', () => {
+                confetti();
+                showConad();
+            });
+
+            denyButton.addEventListener('click', () => {
+                confetti();
+                showConad();
+            });
+
+            sendButton.addEventListener('click', () => {
+                confetti();
+                showConad();
+            });
+        });
+    </script>
+</body>
+</html>
